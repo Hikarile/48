@@ -1,0 +1,295 @@
+body, html {
+    background-color: #222;
+    font-family: fantasy;
+    font-size: 20px;
+    color: #fff;
+    user-select: none;
+}
+
+#game{
+    position: absolute;
+    margin-left: -480px;
+    margin-top: -300px;
+    left:50%;
+    top:50%;
+    width:960px;
+    height:600px;
+
+    overflow:hidden;
+    
+    box-shadow:0px 0px 10px 1px #888888;
+
+    background-repeat: repeat;
+    background-size: cover;
+    background-image: url("../img/background.jpg");
+}
+#canvas{
+    position: absolute;
+    width:960px;
+    height:600px;
+}
+#game_controller{
+    position: relative;
+    color: #fff;
+}
+#game_windows{
+    position: absolute;
+    top:0px;
+    width:100%;
+    height: 100%;
+}
+#game_font{
+    position:absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -200px;
+    width: 400px;
+}
+
+.game_name{
+    margin-bottom: 20px;
+    width: 100%; 
+}
+
+.controller{
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 196, 218, 0.5);
+    border-radius: 99rem;
+    border: 3px dashed #EED559;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+#power_img{
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    width: 30px;
+}
+#power{
+    position: absolute;
+    z-index: 2;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+#power-counter{
+    position: absolute;
+    z-index: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 50%;
+    background: #f00;
+}
+
+
+.opacity{
+    opacity: 0.6;
+}
+.opacity:hover{
+    opacity: 1;
+}
+
+.scenes{
+    position:absolute;
+    user-select: none;
+    opacity: 0.3;
+}
+.sound{
+    width: 50px;
+    height: 50px;
+
+}
+.box{ /* 小視窗基本樣式 */
+    position: absolute;
+    user-select: none;
+    color: #000;
+    left: 50%;
+    top: 50%;
+}
+#game_start{ /*遊戲開始畫面*/
+    width: 400px;
+    height:140px;
+    margin-left: -200px;
+    margin-top: -70px;
+}
+#game_end{ /*遊戲結束畫面*/
+    width: 400px;
+    height:140px;
+    margin-left: -200px;
+    margin-top: -70px;
+}
+#game_count{ /*遊戲分數統計畫面*/
+    width: 600px;
+    height:400px;
+    margin-left: -300px;
+    margin-top: -200px
+}
+.start_content{ /* 彈跳小視窗的內容 */
+    padding:20px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+
+#game_helop{ /* 遊戲解說視窗 */
+    height: 270px;
+    width: 360px;
+    font-size: 15px;
+    text-align: left;
+    margin-bottom: 15px;
+    border: #aaa solid 1px;
+    overflow-y: auto;
+}
+
+
+#table_div{
+    width: 0 auto;
+    height: 250px;
+    overflow-y: auto;
+}
+#table1{
+    margin: 0 auto;
+    width: 90%;
+}
+#table2{
+    width: 100%;
+}
+tr{
+    height: 50px;
+}
+.tr_color{
+    background-color: coral;
+}
+
+
+#name{ /* 輸入名字的text */
+    width: 200px;
+    height: 40px;
+    border:#555 solid 2px;
+    font-size: 20px;
+}
+.click_off{ /* 未輸入名字時的button */
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    background-color: #aaa;
+    padding: 10px 30px 10px 30px;
+    color: #fff;
+    font-size: 20px;
+}
+.click_off:hover{
+    cursor: no-drop;
+}
+
+
+button{ /* buttonru 基本樣式 */
+    position: relative;
+    margin: 5px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    background-color: chocolate;
+    border: none;
+    border-radius: 20px;
+}
+button:hover{
+    background-color: #f19e0d;
+}
+.font_size{
+    width: 46%;
+    height: 50px;
+}
+.button{
+    padding: 10px 30px 10px 30px;
+}
+
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: #63C4DA;
+    border-radius: 100%;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+}
+.keyboard {
+    position: absolute;
+    border-top: 1px solid #63c4da;
+    border-left: 1px solid #63c4da;
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+}
+.up {
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+.down {
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(225deg);
+}
+.left {
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+.right {
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%) rotate(-225deg);
+}
+.rocker{
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+    border-radius: 100%;
+    background: rgba(99, 196, 218, 0.3);
+}
+.fire{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 100px;
+    color: #fff;
+    border-radius: 100%;
+    background: rgba(99, 196, 218, 0.3);
+}
+.fire:hover{
+    box-shadow: 0 0 40px #fbd33b;
+    background: rgba(251, 211, 59, 0.5);
+    cursor: pointer;
+}
+
+.ripple { /* 水波樣式 */
+    position: absolute;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, .4);
+    transform: scale(0);
+    animation: rippleDrop .6s linear;
+}
+@keyframes rippleDrop {
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,363 @@
+htnl, body{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #222;
+    user-select: none;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.opacity{
+    opacity: 0.5;
+}
+.opacity:hover{
+    opacity: 1;
+}
+.hide{
+    display: none;
+}
+.button{
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    margin: 10px;
+    color: #fff;
+    background-color: #ff5722;
+    height: 80%;
+    border: none;
+    border-radius: 20px;
+}
+.button_change_color:hover{
+    background-color: #f19e0d;
+}
+.button_not_click{
+    background-color: #aaa;
+}
+.button_not_click:hover{
+    cursor: no-drop;
+}
+.font_15{
+    font-size: 15px;
+}
+.font_20{
+    font-size: 20px;
+}
+.font_25{
+    font-size: 25px;
+}
+.img{
+    position: absolute;
+}
+.shape0{
+    width: 100px;
+    height: 50px;
+}
+.shape1, .shape2, .shape3, .shape4, .supply{
+    width: 80px;
+    height: 80px;
+}
+.attack1, .attack2{
+    width: 40px;
+    height: 3px;
+}
+
+#game{
+    position: absolute;
+    margin-left: -480px;
+    margin-top: -300px;
+    top: 50%;
+    left: 50%;
+    width: 960px;
+    height: 600px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 0px #aaa;
+    background-image: url(../image/bg.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+}
+#game_bg{
+    opacity: 0.4;
+}
+
+#game_controller{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 15%;
+}
+.controller{
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: cadetblue;
+    border: #f19e0d dashed 4px;
+}
+#power_color{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50%;
+    background-color: #f00;
+}
+#power_img{
+    position: absolute;
+    top: 5px;
+    width: 30px;
+}
+#power{
+    position: absolute;
+    bottom: 10px;
+}
+
+#rock_fire:hover{
+    background-color: #f19e0d;
+}
+.rock{
+    width: 120px;
+    height: 120px;
+    opacity: 0.8;
+    background-color: #92c4eb;
+    border-radius: 100%;
+    box-shadow: 0px 0px 20px 0px #aaa;
+}
+.c{
+    position: absolute;
+    margin-left: -10px;
+    margin-top: -10px;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #006cc2;
+    border-radius: 100%;
+}
+.mouse{
+    position: absolute;
+    margin-left: -5px;
+    margin-top: -5px;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #f19e0d;
+    border-radius: 100%;
+}
+.key{
+    position: absolute;
+    margin-left: -5px;
+    margin-top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top:#006cc2 solid 2px;
+    border-left:#006cc2 solid 2px;
+}
+.top{
+    top: 15%;
+    left: 50%;
+    transform: rotate(45deg);
+}
+.right{
+    top: 50%;
+    left: 85%;
+    transform: rotate(135deg);
+}
+.botton{
+    top: 85%;
+    left: 50%;
+    transform: rotate(225deg);
+}
+.left{
+    top: 50%;
+    left: 15%;
+    transform: rotate(315deg);
+}
+
+#game_windos{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+.box{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.title{
+    font-weight: bold;
+    color: #000;
+}
+#game_start{
+    width: 450px;
+    height: 150px;
+}
+#help_text{
+    overflow-y: auto;
+    text-align: left;
+    width: 100%;
+    height: 70%;
+    color: #000;
+}
+#game_end{
+    width: 450px;
+    height: 150px;
+}
+#game_count{
+    width: 450px;
+    height: 400px;
+}
+
+
+#table_div{
+    height: 70%;
+    width: 100%;
+    overflow-y: auto;
+}
+table{
+    width: 100%;
+    color: #795548;
+}
+th{
+    background-color: #ff9800;
+}
+tr:nth-child(even){
+    height: 50px;
+    background-color: #ffe38f;
+}
+tr:nth-child(odd){
+    height: 50px;
+    background-color: #fff9c8;
+}
+
+#game_font{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+
+.water{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 100%;
+    transform: scale(0);
+    animation: water_k 0.5s linear;
+}
+@keyframes water_k{
+    100%{
+        opacity: 0.5;
+        transform: scale(2);
+    }
+}
+
+.touch{
+    position: absolute;
+    background-color: #f00;
+    border-radius: 100%;
+    transform: scale(0);
+    opacity: 0.5;
+    animation: touch_k 0.2s linear;
+}
+@keyframes touch_k{
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.oil{
+    background-color: #f00;
+    animation: oil_k 0.5s infinite alternate;
+}
+@keyframes oil_k{
+    from{
+        opacity: 0.8;
+    }
+    to{
+        opacity: 0.5;
+    }
+}
+
+.over{
+    animation: over_k .1s steps(10) infinite;
+}
+@keyframes over_k{
+    20%{
+        transform: translate(-5px, 0px);
+    }
+    40%{
+        transform: translate(5px, 0px);
+    }
+    60%{
+        transform: translate(-5px, 0px);
+    }
+    80%{
+        transform: translate(5px, 0px);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
+
+
+
+li {
+    transform: scale(0);
+    opacity: 0;
+    animation: li_k .5s forwards alternate;
+}
+li:nth-child(1) {
+    animation-delay: 0.15s;
+}
+li:nth-child(2) {
+    animation-delay: 0.30s;
+}
+li:nth-child(3) {
+    animation-delay: 0.45s;
+}
+li:nth-child(4) {
+    animation-delay: 0.60s;
+}
+li:nth-child(5) {
+    animation-delay: 0.75s;
+}
+li:nth-child(6) {
+    animation-delay: 0.90s;
+}
+li:nth-child(7) {
+    animation-delay: 1.05s;
+}
+li:nth-child(8) {
+    animation-delay: 1.20s;
+}
+li:nth-child(9) {
+    animation-delay: 1.35s;
+}
+li:nth-child(10) {
+    animation-delay: 1.50s;
+}
+li:nth-child(11) {
+    animation-delay: 1.65s;
+}
+li:nth-child(12) {
+    animation-delay: 1.80s;
+}
+li:nth-child(13) {
+    animation-delay: 1.95s;
+}
+@keyframes li_k {
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

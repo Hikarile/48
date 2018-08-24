@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>無標題文件</title>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/js.js"></script>
+        <link rel=stylesheet type="text/css" href="css/css.css">
+    </head>
+ 
+    <body>
+        <div id="game_img">
+            <img id="shape0" src="img/shap0.png" style="width: 90px" hidden>
+            <div>
+                <img id="shape1" src="img/shap1.png" style="width: 70px" hidden>
+                <img id="shape11" src="img/shap11.png" style="width: 70px" hidden>
+                <img id="shape12" src="img/shap12.png" style="width: 70px" hidden>
+                <img id="shape13" src="img/shap13.png" style="width: 70px" hidden>
+                <img id="shape14" src="img/shap14.png" style="width: 70px" hidden>
+            </div>
+            <div>
+                <img id="shape2" src="img/shap2.png" style="width: 70px" hidden>
+                <img id="shape21" src="img/shap21.png" style="width: 70px" hidden>
+                <img id="shape22" src="img/shap22.png" style="width: 70px" hidden>
+                <img id="shape23" src="img/shap23.png" style="width: 70px" hidden>
+                <img id="shape24" src="img/shap24.png" style="width: 70px" hidden>
+            </div>
+            <img id="shape3" src="img/shap3.png" style="width: 70px;" >
+            <img id="shape4" src="img/shap4.png" style="width: 70px;" >
+            
+            <img id="attack1" src="img/attack1.png" style="width: 50px" hidden>
+            <img id="attack2" src="img/attack2.png" style="width: 50px" hidden>
+            <img id="supply" src="img/supply.png" style="width: 50px" hidden>
+        </div>
+        
+        <div id="game">
+            <div id="bg_img">
+                <img class="scenes" id="scenes1" src="img/scenes_1.png" style="width: 40px; transform: translate(90px, 70px);">
+                <img class="scenes" id="scenes2" src="img/scenes_4.png" style="width: 100px; transform: translate(700px, 150px);">
+                <img class="scenes" id="scenes3" src="img/scenes_2.png" style="width: 60px; transform: translate(250px, 240px);">
+                <img class="scenes" id="scenes4" src="img/scenes_3.png" style="width: 80px; transform: translate(750px, 300px);">
+                <img class="scenes" id="scenes5" src="img/scenes_5.png" style="width: 120px; transform: translate(200px, 400px);">
+                <img class="scenes" id="scenes6" src="img/scenes_6.png" style="width: 140px; transform: translate(500px, 420px);">
+            </div>
+            
+            <canvas id="canvas" width="960px" height="600px">瀏覽器並不支援</canvas>
+            <div id="game_controller" class="opacity">
+                <div style="display: flex; justify-content: center;">
+                    <div id="score" class="controller"></div>
+                    <div class="controller" style="position: relative; overflow: hidden;">
+                        <div id="power-counter"></div>
+                        <img id="power_img" src="img/supply.png">
+                        <span id="power"></span>
+                    </div>
+
+                    <img src="img/logo.png" style="width: 121px; height: 81px;">
+                    
+                    <img class="restart controller" type="start" src="img/star.png">
+                    <img class="restart controller" type="stop" src="img/stop.png" style="display: none;">
+                    
+                    <div id="timing" class="controller"></div>
+                </div>
+                <div style="position: absolute; right: 10px; top: 10px;">
+                    <img class="sound" type="on"  src="img/sound_on.png">
+                    <img class="sound" type="off" src="img/sound_off.png" hidden>
+                </div>
+            </div>
+
+            <div class="rocker" id="rocker">
+                <div class="center"></div>
+                <div class="keyboard up"></div>
+                <div class="keyboard down"></div>
+                <div class="keyboard left"></div>
+                <div class="keyboard right"></div>
+            </div>
+            <div class="fire" id="fire">FIRE</div>
+
+            <div id="game_windows">
+                <div id="game_start" class="box" >
+                    <div class="start_content">
+                        <div class="game_name">Star Battle</div>
+                        
+                        <div id="game_helop" hidden>
+                            <span style="font-weight: bold; font-size: 18px">How to Play</span>
+                            <ol>
+                                <li>Move the airplane using the arrows keys;</li>
+                                <li>The timer present the time lapsed;</li>
+                                <li>The fuel counter show the remain fuel;</li>
+                                <li>During the flight, the aircraft need to avoid the birds that are presented in the sky. If the airplane hit a bird, the game is over;</li>
+                                <li>During the flight, the aircraft need to collect fuel and stars in the sky;</li>
+                                <li>You can pause the game clicking in a button pause, or pressing the space bar.</li>
+                                <li>Go beyond all limits;</li>
+                            </ol>
+                        </div>
+                        
+                        <button class="button" id="button_how">How to Play</button>
+                        <button class="button" id="button_start">Start Game</button>
+                    </div>
+                </div>
+                
+                <div id="game_end" class="box" hidden>
+                    <div class="start_content">
+                        <div class="game_name">Star Battle</div>
+                        <input id="name" type="text" name="name">
+                        <button id="continue" class="click_off" disabled>Continue</button>
+                    </div>
+                </div>
+        
+                <div id="game_count" class="box" hidden>
+                    <div class="start_content" style="height: 400px;">
+                        <div class="game_name">Star Battle</div>
+                        
+                        <table id="table1" border="1">
+                            <tr>
+                                <th>Position</th>
+                                <th>Name</th>
+                                <th>Score</th>
+                                <th>Time</th>
+                            </tr>
+                        </table>
+                        <div id="table_div" hidden>
+                            <table id="table2" border="1">
+                                <tr>
+                                    <th>Position</th>
+                                    <th>Name</th>
+                                    <th>Score</th>
+                                    <th>Time</th>
+                                </tr>
+                            </table>
+                        </div><br/>
+        
+                        <button class="button" id="data_count1" hidden>X</button>
+                        <button class="button" id="data_count2">All Ranking</button>
+                        <button class="button" id="button_restart">Start Game</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="game_font" class="opacity">
+                <button class="font_size" id="font_size_down">- Font Size</button>
+                <button class="font_size" id="font_size_up">Font Size +</button>
+            </div>
+        </div>
+        
+        <div id="game_audio">
+            <audio id="audio0" src="music/background.mp3" loop>背景-瀏覽器無法支援</audio>
+            <audio id="audio1" src="music/shoot.mp3">射擊 - 瀏覽器無法支援</audio>
+            <audio id="audio2" src="music/destroyed.mp3">爆炸-瀏覽器無法支援</audio>
+        </div>
+
+    </body>
+</html>

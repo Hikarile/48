@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Start Battle</title>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/js.js"></script>
+        <link rel="stylesheet" href="css/css.css">
+    </head>
+
+    <body>
+        <div id="game">
+            <div id="game_bg">
+                <img src="07_design/07_source/01.png" id="bg_img1" class="img" style="width: 50px;" alt="">
+                <img src="07_design/07_source/02.png" id="bg_img2" class="img" style="width: 80px;" alt="">
+                <img src="07_design/07_source/03.png" id="bg_img3" class="img" style="width: 120px;" alt="">
+                <img src="07_design/07_source/04.png" id="bg_img4" class="img" style="width: 150px;" alt="">
+                <img src="07_design/07_source/05.png" id="bg_img5" class="img" style="width: 180px;" alt="">
+                <img src="07_design/07_source/06.png" id="bg_img6" class="img" style="width: 210px;" alt="">
+            </div>
+
+            <div id="canvas">
+                <img src="07_design/07_source/shape01.png" class="shape0 img center" alt="">
+            </div>
+
+            <div id="game_controller" class="center opacity">
+                <div class="center">
+
+                </div>
+                <div style="position: absolute; top: 40px; right: 40px">
+                    <img src="07_design/07_source/sound_on.png" id="sound_on" alt="">
+                    <img src="07_design/07_source/sound_off.png" id="sound_off" alt="">
+                </div>
+            </div>
+
+            <div id="game_font" class="center">
+                <button id="fount_down" class="button button_change_color center font_20" style="width: 200px;">- Font Size</button>
+                <button id="fount_up" class="button button_change_color center font_20" style="width: 200px;">Font Size +</button>
+            </div>
+
+            <div id="game_audio">
+                <audio src="sound/background.mp3" id="audio1" loop></audio>
+                <audio src="sound/shoot.mp3" class="audio1" autoplay></audio>
+                <audio src="sound/destroyed.mp3" class="audio" autoplay></audio>
+            </div>
+        </div>
+    </body>
+</html>

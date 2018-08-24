@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Start Battle</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/js.js"></script>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+
+<body>
+    <div id="game">
+        <div id="game_bg">
+            <img src="image/01.png" id="bg_img1" class="img" style="width: 50px;">
+            <img src="image/02.png" id="bg_img2" class="img" style="width: 80px;">
+            <img src="image/03.png" id="bg_img3" class="img" style="width: 120px;">
+            <img src="image/04.png" id="bg_img3" class="img" style="width: 150px;">
+            <img src="image/05.png" id="bg_img4" class="img" style="width: 180px;">
+            <img src="image/06.png" id="bg_img5" class="img" style="width: 210px;">
+        </div>
+
+        <div id="canvas">
+            <img src="image/shape01.png" class="img shape0 center" style="top:300px; left: 0px;">
+        </div>
+        
+        <div id="game_controller" class="center opacity">
+            <div class="center">
+                <div id="score" class="controller center font_20">0</div>
+                <div class="controller center font_20">
+                    <div id="power_color" class="oil"></div>
+                    <img id="power_img" src="image/oil.png">
+                    <span id="power">15</span>
+                </div>
+                <img src="image/logo.png" style="height: 80px">
+                <div class="controller center font_20">
+                    <img src="image/start.png" id="start" style="width: 80%;">
+                    <img src="image/stop.png" id="stop" class="hide" style="width: 80%;">
+                </div>
+                <div id="time" class="controller center font_20">0s</div>
+            </div>
+            <div class="center" style="position: absolute; top: 20px; right: 20px">
+                <img src="image/sound_on.png" id="sound_on" style="width: 40px;">
+                <img src="image/sound_off.png" id="sound_off" class="hide" style="width: 40px;">
+            </div>
+        </div>
+        
+        <div id="rock_move" class="rock center img" style="top: 400px; left: 50px;">
+            <div class="c"></div>
+            <div class="mouse"></div>
+            <div class="key top"></div>
+            <div class="key right"></div>
+            <div class="key botton"></div>
+            <div class="key left"></div>
+        </div>
+        <div id="rock_fire" class="rock center img font_25" style="top: 400px; right: 50px;">FIRE</div>
+
+        <div id="game_windos" class="center">
+            <div id="game_start" class="box cneter ">
+                <div id="start_up" class="center" style="width: 100%; height: 50%; border-bottom: #000 solid 3px;">
+                    <img src="image/logo.png" style="height: 80%;">
+                    <span class="font_25 title">Start Battle</span>
+                </div>
+                <div id="help_text" class="hide">
+                    <span class="font_25" style="font-weight: bold;">How To Play</span>
+                    <ol class="font_15">
+                        <li>Move the spaceship using the sensible areas in the screen;</li>
+                        <li>The timer present the time lapsed;</li>
+                        <li>The fuel counter show the remain fuel;</li>
+                        <li>During the flight, the spaceship needs to destroy the asteroids and enemy spaceships that are presented in the space;</li>
+                        <li>You can shoot pressing Space Bar;</li>
+                        <li>If the spaceship hits a asteroid or another spaceship, you lose 15 points of fuel;</li>
+                        <li>Enemy spaceship needs 1 shot to be destroyed, you will get 5 points for each enemy destroyed;</li>
+                        <li>Asteroid needs 2 shots to be destroyed, you will get 10 points for each asteroid destroyed;</li>
+                        <li>If you destroy a friendly spaceship, you lose 10 points;</li>
+                        <li>During the flight, the spaceship needs to collect fuel in the space;</li>
+                        <li>You can pause the game clicking in a button pause, or pressing the letter "p";</li>
+                        <li>Go beyond all limits;</li>
+                        <li style="color: gold">Battle in Space with Star Battle Championship...</li>
+                    </ol>
+                </div>
+                <div id="start_botton" class="center" style="width: 100%; height: 50%;">
+                    <button id="button_help" class="button button_change_color center font_20" style="width: 30%;">How To Play</button>
+                    <button id="button_start" class="button button_change_color center font_20" style="width: 70%;">Game Start</button>
+                </div>
+            </div>
+            
+            <div id="game_end" class="box cneter hide">
+                <div class="center" style="width: 100%; height: 50%; border-bottom: #000 solid 3px;">
+                    <img src="image/logo.png" style="height: 80%;">
+                    <span class="font_25 title">Start Battle</span>
+                </div>
+                <div class="center" style="width: 100%; height: 50%;">
+                    <input id="name" class="font_25" style="width: 70%; height: 50%;" type="text">
+                    <button id="button_name" class="button button_not_click center font_20" style="width: 30%;">OK</button>
+                </div>
+            </div>
+
+            <div id="game_count" class="box cneter hide">
+                <div class="center" style="width: 100%; height: 15%; border-bottom: #000 solid 3px;">
+                    <img src="image/logo.png" style="height: 80%;">
+                    <span class="font_25 title">Start Battle</span>
+                </div>
+                <div id="table_div">
+                    <table id="table">
+                        <tr>
+                            <th>Potitoon</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                            <th>Time</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="center" style="width: 100%; height: 15%;">
+                    <button id="button_restart" class="button button_change_color center font_20" style="width: 80%;">Game Restart</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game_font" class="center opacity">
+            <button id="font_up" class="button button_change_color center font_20" style="width: 200px;">- Font Size</button>
+            <button id="font_down" class="button button_change_color center font_20" style="width: 200px;">Font Size +</button>
+        </div>
+
+        <div id="game_audio">
+            <audio src="sound/background.mp3" id="audio1" loop></audio>
+        </div>
+    </div>
+</body>
+</html>
